@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import  prompt
+import prompt
 
 
 def greet(who):
