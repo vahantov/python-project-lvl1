@@ -1,14 +1,21 @@
 #!/usr/bin/env python
 
-# if __name__ == '__main__':
-#     print('Welcome to the Brain Games!')
+import  prompt
+
 
 def greet(who):
     print('Hello, {}!'.format(who))
 
+
+def welcome_user():
+    print('Welcome to the Brain Games!')
+    name = prompt.string('May I have your name? ')
+    greet(name)
+
+
 def main():
-    greet('Bob')
-    greet('Ann')
+    welcome_user()
+
 
 if __name__ == '__main__':
     main()
