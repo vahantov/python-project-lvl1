@@ -4,8 +4,6 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: pip install poetry
-      - run: make build
       - run:
           pip install poetry
           make install      
