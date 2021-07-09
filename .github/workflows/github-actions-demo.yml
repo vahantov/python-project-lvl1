@@ -4,6 +4,8 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - run: pip install poetry
+      - run: make install
       - run: make build
       - run: make lint
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
