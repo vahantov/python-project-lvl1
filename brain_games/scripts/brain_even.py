@@ -29,11 +29,11 @@ def even_game(login):
             points += 1
             print('Correct!')
         else:
-            points = 0
             correct_answer = 'yes' if answer == 'no' else 'no'
             print(f"'{answer}' is wrong answer ;(."
                   f" Correct answer was '{correct_answer}'")
             print(f"Let's try again, {login}!")
+            break
         if points == 3:
             print(f"Congratulations, {login}!")
 
@@ -44,3 +44,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
