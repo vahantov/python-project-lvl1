@@ -1,8 +1,13 @@
 #!/usr/bin/env python
 
 import prompt
+import sys
+
+sys.path.append('brain_games/games')
+
 
 from random import randint
+import games
 
 
 def greet(who):
@@ -24,8 +29,8 @@ def calc_game(login):
              3: '*'}
     while points != 3:
         key = randint(1, 3)
-        number1 = randint(1, 500)
-        number2 = randint(1, 500)
+        number1 = randint(1, 10)
+        number2 = randint(1, 10)
         if key == 1:
             correct_answer = number1 + number2
         elif key == 2:
@@ -49,7 +54,8 @@ def calc_game(login):
 
 
 def main():
-    calc_game(welcome_user())
+    # calc_game(welcome_user())
+    print(games.uga_ga())
 
 
 if __name__ == '__main__':
