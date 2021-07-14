@@ -16,34 +16,40 @@ def welcome_user():
     return name
 
 
-# def even_game(login):
-#     print('Answer "yes" if the number is even, otherwise answer "no".')
-#     points = 0
-#
-#     while points != 3:
-#         number = randint(1, 500)
-#         is_even_tumbler = 'yes' if number % 2 == 0 else 'no'
-#         print(f'Question: {number}')
-#         answer = prompt.string('Your answer ').lower()
-#         if answer == is_even_tumbler:
-#             points += 1
-#             print('Correct!')
-#         else:
-#             correct_answer = 'yes' if answer == 'no' else 'no'
-#             print(f"'{answer}' is wrong answer ;(."
-#                   f" Correct answer was '{correct_answer}'")
-#             print(f"Let's try again, {login}!")
-#             break
-#         if points == 3:
-#             print(f"Congratulations, {login}!")
-
-
 def calc_game(login):
-    pass
+    print('What is the result of the expression?')
+    points = 0
+    signs = {1: '+',
+             2: '-',
+             3: '*'}
+    while points != 3:
+        key = randint(1, 3)
+        number1 = randint(1, 500)
+        number2 = randint(1, 500)
+        if key == 1:
+            correct_answer = number1 + number2
+        elif key == 2:
+            correct_answer = number1 - number2
+        else:
+            correct_answer = number1 * number2
+
+        print(f'Question: {number1} {signs[key]} {number2}')
+        answer = int(prompt.string('Your answer: '))
+
+        if answer == correct_answer:
+            points += 1
+            print('Correct!')
+        else:
+            print(f"'{answer}' is wrong answer ;(."
+                  f" Correct answer was '{correct_answer}'")
+            print(f"Let's try again, {login}!")
+            break
+        if points == 3:
+            print(f"Congratulations, {login}!")
 
 
 def main():
-    even_game(welcome_user())
+    calc_game(welcome_user())
 
 
 if __name__ == '__main__':

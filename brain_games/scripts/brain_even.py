@@ -24,7 +24,7 @@ def even_game(login):
         number = randint(1, 500)
         is_even_tumbler = 'yes' if number % 2 == 0 else 'no'
         print(f'Question: {number}')
-        answer = prompt.string('Your answer ').lower()
+        answer = prompt.string('Your answer: ').lower()
         if answer == is_even_tumbler:
             points += 1
             print('Correct!')
@@ -44,4 +44,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
